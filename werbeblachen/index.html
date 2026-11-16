@@ -816,17 +816,59 @@ var photocrati_ajax = {"url":"..\/index.php\/","wp_home_url":"..\/","wp_site_url
 
 	</div><!-- #content -->
 	
-	<div id="sidebar-footer" class="footer-widget-area clearfix" role="complementary">
-		<div class="container">
-								</div>	
-	</div>	
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<div class="container">
-				<a href="http://wordpress.org/">Proudly powered by WordPress</a>
-				<span class="sep"> | </span>
-				Theme: <a href="http://athemes.com/theme/solon">Solon</a> by aThemes				<a href="#" class="scrollup"><i class="fa fa-chevron-up"></i></a>
-			</div><!-- .site-info -->
+<style>
+.hg-footer{background:#1e1e1e;color:#cfcfcf;border-top:6px solid #ed1c24;font-size:15px;line-height:1.7}
+.hg-footer .hg-wrap{max-width:1170px;margin:0 auto;padding:50px 15px 30px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.hg-footer h4{font-family:'Oswald',sans-serif;color:#fff;font-size:20px;letter-spacing:1px;margin:0 0 18px;padding-bottom:10px;border-bottom:2px solid #ed1c24;display:inline-block;text-transform:uppercase}
+.hg-footer a{color:#cfcfcf;text-decoration:none;transition:color .2s}
+.hg-footer a:hover{color:#ed1c24}
+.hg-footer ul{list-style:none;margin:0;padding:0;columns:2;column-gap:20px}
+.hg-footer li{margin-bottom:6px;font-family:'Oswald',sans-serif;letter-spacing:.5px}
+.hg-footer .hg-tel{color:#fff;font-weight:bold}
+.hg-footer table{width:100%;border:0;margin:0}
+.hg-footer td{border:0;padding:3px 0;color:#cfcfcf}
+.hg-footer td+td{text-align:right;color:#fff}
+.hg-footer .hg-bottom{background:#ed1c24;color:#fff;font-size:14px}
+.hg-footer .hg-bottom .hg-in{max-width:1170px;margin:0 auto;padding:14px 15px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.hg-footer .hg-bottom a{color:#fff;font-weight:bold}
+.hg-footer .hg-bottom a:hover{color:#1e1e1e}
+.hg-footer .scrollup{color:#fff}
+@media(max-width:767px){.hg-footer .hg-wrap{grid-template-columns:1fr;gap:30px;padding:40px 20px 25px}.hg-footer .hg-bottom .hg-in{justify-content:center;text-align:center}}
+</style>
+	<footer id="colophon" class="site-footer hg-footer" role="contentinfo">
+		<div class="hg-wrap">
+			<div>
+				<h4>Herzog Beschriftungen</h4>
+				<p>Kreuzlingerstrasse 102<br>8580 Amriswil</p>
+				<p>Telefon: <a class="hg-tel" href="tel:+41764776848">076 477 68 48</a><br>E-Mail: <a href="mailto:danlia@gmx.ch">danlia@gmx.ch</a></p>
+			</div>
+			<div>
+				<h4>Menü</h4>
+				<ul>
+					<li><a href="../">HOME</a></li>
+					<li><a href="../beschriftungen/">FAHRZEUGE</a></li>
+					<li><a href="../grafik/">SCHAUFENSTER</a></li>
+					<li><a href="../carwrapping/">TAFELN</a></li>
+					<li><a href="../textildreuck/">TEXTILDRUCK</a></li>
+					<li><a href="../sponsor/">STICKERS</a></li>
+					<li><a href="../werbeblachen/">WERBEBLACHEN</a></li>
+					<li><a href="../kontakt/">KONTAKT</a></li>
+				</ul>
+			</div>
+			<div>
+				<h4>Öffnungszeiten</h4>
+				<table>
+					<tr><td>Montag – Freitag</td><td>18:00 – 21:00 Uhr</td></tr>
+					<tr><td>Samstag</td><td>09:00 – 14:00 Uhr</td></tr>
+				</table>
+			</div>
+		</div>
+		<div class="hg-bottom">
+			<div class="hg-in">
+				<span>&copy; <script>document.write(new Date().getFullYear())</script> Herzog Beschriftungen</span>
+				<span>Made by <a href="https://codepixel.ch" target="_blank" rel="noopener">Codepixel.ch</a></span>
+				<a href="#" class="scrollup"><i class="fa fa-chevron-up"></i></a>
+			</div>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
