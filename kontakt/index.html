@@ -167,11 +167,11 @@ body { color: #3e4437; }
 </style>
 <div class="hg-form">
 <h3>Kontaktformular</h3>
-<div class="hg-ok" id="hg-ok"><strong>Vielen Dank!</strong> Ihre Nachricht wurde gesendet. Wir melden uns so schnell wie möglich.</div>
+<div class="hg-ok" id="hg-ok"><strong>Vielen Dank für Ihre Anfrage!</strong><br>Wir haben Ihre Nachricht erhalten und melden uns so schnell wie möglich bei Ihnen.</div>
 <form id="hg-kontakt" action="https://formsubmit.co/danlia@gmx.ch" method="POST" enctype="multipart/form-data">
 <input type="hidden" name="_subject" value="Neue Anfrage über herzog-grafik.ch">
 <input type="hidden" name="_template" value="table">
-<input type="hidden" name="_captcha" value="true">
+<input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_next" id="hg-next" value="https://herzog-grafik.ch/kontakt/?gesendet=1">
 <input type="text" name="_honey" class="hg-hp" tabindex="-1" autocomplete="off">
 <label for="hg-name">Ihr Name <span>*</span></label>
@@ -196,6 +196,15 @@ body { color: #3e4437; }
 (function(){
 var n=document.getElementById('hg-next');if(n)n.value=location.origin+location.pathname+'?gesendet=1';
 if(location.search.indexOf('gesendet=1')>-1){var o=document.getElementById('hg-ok');o.style.display='block';document.getElementById('hg-kontakt').style.display='none';}
+var fm=document.getElementById('hg-kontakt'),ok=document.getElementById('hg-ok'),sent=false;
+fm.addEventListener('submit',function(e){
+if(sent)return;e.preventDefault();
+var b=fm.querySelector('.hg-btn');b.disabled=true;b.textContent='Wird gesendet …';
+fetch('https://formsubmit.co/ajax/danlia@gmx.ch',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(fm)})
+.then(function(r){if(!r.ok)throw 0;return r.json();})
+.then(function(){fm.style.display='none';ok.style.display='block';ok.scrollIntoView({behavior:'smooth',block:'center'});})
+.catch(function(){sent=true;fm.submit();});
+});
 var d=document.getElementById('hg-datei');d.addEventListener('change',function(){if(d.files[0]&&d.files[0].size>5*1024*1024){alert('Die Datei ist grösser als 5 MB.');d.value='';}});
 })();
 </script>
