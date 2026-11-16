@@ -1,5 +1,13 @@
 {
   "name": "herzog-grafik",
+  "main": "src/index.js",
   "compatibility_date": "2025-01-01",
-  "assets": { "directory": "./" }
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "send_email": [
+    { "name": "KONTAKT", "destination_address": "danlia@gmx.ch" }
+  ]
 }
